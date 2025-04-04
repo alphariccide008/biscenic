@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=pacifico&family=Raleway:wght@400;600;700&family=Lora:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
+    <style>
+        /* div{
+            border: 1px solid red;
+            min-height: 100px;
+        } */
+    </style>
+
+</head>
+<body>
+   
+     <!-- Navbar -->
+     <nav  class="navbar text-white fixed-top navbar-expand-lg w-full navbar-colored navbar-light ">
+        <div class="container">
+          <a class="navbar-brand text-white" href="index.html" style="font-family: 'Pacifico', cursive;">BISCENIC</a>
+          <button class="navbar-toggler bg-light navIcon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+            <span class="text-white navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 text-center mx-5">
+              <li class="nav-item"><a class="nav-link text-white active px-5" href="index.html">Home</a></li>
+              
+              <!-- Shop Dropdown -->
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle text-white px-5" href="#" id="shopDropdown" role="button">
+                  Shop
+                </a>
+                <ul class="dropdown-menu navbar-colored" aria-labelledby="shopDropdown">
+                  <li><a class="dropdown-item text-white" href="all.html">All</a></li>
+                  <li><a class="dropdown-item text-white" href=" #">Furniture</a></li>
+                  <li><a class="dropdown-item text-white" href="#">LumiVase</a></li>
+                </ul>
+              </li>
+              
+              <li class="nav-item"><a class="nav-link px-4 text-white" href="#">Contact</a></li>
+              
+            </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0 text-center px-5 ms-lg-3">
+              <li class="nav-item"><a class="nav-link text-white px-4" href="#"><i class="fas fa-home"></i></a></li>
+              <li class="nav-item"><a class="nav-link px-4 text-white" href="#"><i class="fas fa-search"></i></a></li>
+              <li class="nav-item"><a class="nav-link px-4 text-white" href="#"><i class="fas fa-user"></i></a></li>
+              <li class="nav-item"><a class="nav-link px-4 text-white" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    
+    
+    
+    <!-- Endpoint for navbar -->
+   
+  <section>
+        <div class="row justify-content-center" >
+            <div class="col-md-11">
+                <div class="row px-3 " style="padding-top: 15%;padding-bottom: 10%;">
+                    <div class="col-md-6 px-0 mb-3">
+                        <img src="images/vase5.jpeg" class="img-fluid rounded" style="height: 500px; width: 100%;" alt="">
+                    </div>
+                    <div class="col-md-6 px-sm-2 px-5">
+                        <h5 class="section-title header-title">GlASS LUMIVASE</h5>
+                        <p class="section-description" style="font-size: 16px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum adipisci reiciendis neque illum asperiores animi voluptates consequatur reprehenderit perspiciatis, aliquid quo praesentium nostrum? Porro repellat id, officia iste omnis dolore nobis aspernatur. Animi sunt laudantium, laboriosam molestias veritatis facere repudiandae, quibusdam sit quam impedit accusantium ipsa. Facilis voluptatum provident commodi quisquam quasi eaque odio quia ex voluptatem. Dolorum perferendis ratione saepe possimus, quibusdam quos atque eius dicta ducimus distinctio ipsum perspiciatis fuga laborum iure inventore cupiditate? Aliquid autem ipsa dolore facilis at vel ipsam quisquam expedita. Est illum dolores id neque voluptate ducimus quam necessitatibus, illo unde eveniet quod sit.</p>
+                        <h5 class="py-2">$600.00</h5>
+                        <div class="d-flex">
+                            <a class="btn btn-outline-dark" id="decrementBtn">-</a>
+                            <input type="number" class="form-control text-center" id="quantityInput" value="1" min="1" style="width: 60px;" readonly>
+                            <a class="btn btn-outline-dark" id="incrementBtn">+</a>
+                            <a href="#" class="btn btn-success mx-3 ">Add To Cart</a>
+                          </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+  </section>
+ 
+
+     <!-- footer -->
+     <footer class="footer mt-5">
+        <div class="row text-center justify-content-center">
+           <div class="col-md-10 pt-5">
+            <div class="row">
+                <div class="col-md-3 px-2">
+                    <h1 class="section-title text-center pt-5" style="color: rgb(186, 186, 181);">BiSCENIC</h1>
+                    <p style="font-size: 14px; color: rgb(197, 197, 193);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos explicabo soluta harum quam autem, sapiente, ea dolorem facilis, sit amet laborum?</p>
+                    <div style="color: rgb(224, 224, 219); font-size: 23px;" >
+                        <i class="fab fa-facebook f px-2"></i>
+                        <i class="fab  fa-instagram i px-2"></i>
+                        <i class="fab  fa-twitter t px-2"></i>
+                        <i class="fab fa-tiktok tik px-2"></i>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="pt-5 pb-3" style="color: rgb(224, 224, 219);">Services</h4>
+                    <ul style="font-size: 14px; color: rgb(197, 197, 193);" class="list-unstyled">
+                        <li class="pb-2">Room Decoration</li>
+                        <li class="pb-2">Exterior Design</li>
+                        <li class="pb-2">Furniture Design</li>
+                        <li class="pb-2">Interior Design</li>
+                        <li class="pb-2">AI Lumivase</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="pt-5 pb-3"  style="color: rgb(224, 224, 219);">Support</h4>
+                    <ul class="list-unstyled" style="font-size: 14px; color: rgb(197, 197, 193);">
+                        <li class="pb-2">Privacy Polidy</li>
+                        <li class="pb-2">Terms Of Services</li>
+                        <li class="pb-2">Credit</li>
+                        <li class="pb-2">FAQ</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 text-center mb-3 mx-auto">
+                    <h4 class="pt-5 pb-3"  style="color: rgb(224, 224, 219);">Newsletter</h4>
+                    <form action="" class="py-3 ">
+                      <input type="text" class="form-control mb-3" placeholder="Enter your email">
+                      <a href="#" class="d-block">
+                        <div class="button-icon d-flex justify-content-center">
+                          <div class="cube   text-center">
+                            <span class="side  front">Subscribe</span>
+                            <span class="side top">Subscribe Now</span>
+                          </div>
+                        </div>
+                      </a>
+                    </form>
+                  </div>
+                  
+            </div>
+           </div>
+        </div>
+        <hr class="text-white">
+       <div class="text-center py-3">
+        <p  style="color: rgb(224, 224, 219);"> &copy; 2025 BiSCENIC. All rights reserved</p>
+       </div>
+
+     </footer>
+    
+    
+      
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        window.addEventListener("scroll", function() {
+            let navbar = document.getElementById("mainNavbar");
+            if (window.scrollY > 50) {
+                navbar.classList.remove("navbar-transparent");
+                navbar.classList.add("navbar-colored");
+            } else {
+                navbar.classList.remove("navbar-colored");
+                navbar.classList.add("navbar-transparent");
+            }
+        });
+    </script>
+  
+
+   
+  
+</body>
+
+<!-- offcanvas body -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 id="offcanvasRightLabel ">BiSCENIC</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="#">
+        <a href="index.html" class="btn btn-outline-success form-control  py-3 mb-3">
+          Home
+        </a>
+        
+        <li class="nav-item list-unstyled dropdown">
+          <a href="#" class="btn btn-outline-success form-control py-3 mb-3 dropdown-toggle" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Shop
+          </a>
+          <ul class="dropdown-menu navbar-colored form-control" aria-labelledby="shopDropdown">
+            <li><a class="dropdown-item text-white" href="all.html">All</a></li>
+            <li><a class="dropdown-item text-white" href="index.html">Furniture</a></li>
+            <li><a class="dropdown-item text-white"  href="#">LumiVase</a></li>
+          </ul>
+        </li>
+      
+        <a href="#" class="btn btn-outline-success form-control py-3 mb-3">
+          Contact
+        </a>
+        
+        <a href="#" class="btn btn-outline-success form-control py-3 mb-3">
+          Privacy policy
+        </a>
+      </ul>
+      
+      <!-- Enable hover effect -->
+      <style>
+        .nav-item.dropdown:hover .dropdown-menu {
+          display: block;
+        }
+      </style>
+      
+    </div>
+  </div>
+</html>

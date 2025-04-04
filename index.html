@@ -40,7 +40,7 @@
               </a>
               <ul class="dropdown-menu navbar-colored" aria-labelledby="shopDropdown">
                 <li><a class="dropdown-item text-white" href="all.html">All</a></li>
-                <li><a class="dropdown-item text-white" href=" #">Furniture</a></li>
+                <li><a class="dropdown-item text-white" href=" #">AI Lumivase</a></li>
                 <li><a class="dropdown-item text-white" href="#">LumiVase</a></li>
               </ul>
             </li>
@@ -49,9 +49,7 @@
           </ul>
           <ul class="navbar-nav mb-2 mb-lg-0 text-center px-5 ms-lg-3">
             <li class="nav-item"><a class="nav-link text-white px-4" href="#"><i class="fas fa-home"></i></a></li>
-            <li class="nav-item"><a class="nav-link px-4 text-white" href="#"><i class="fas fa-search"></i></a></li>
-            <li class="nav-item"><a class="nav-link px-4 text-white" href="#"><i class="fas fa-user"></i></a></li>
-            <li class="nav-item"><a class="nav-link px-4 text-white" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+            <li class="nav-item"><a class="nav-link px-4 text-white" href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
           </ul>
         </div>
       </div>
@@ -63,27 +61,52 @@
     <!-- Endpoint for navbar -->
    
     <!-- large screen Header section  -->
-    <header class="banner1  d-none d-md-block" style="padding-top: 200px;">
-      <div class="text-center">
-        <h1 class="text-white animate__animated animate__fadeIn animate__slow animate__delay-1s responsive-text" style="padding-top: 10%;">
-          <span class="animate__animated animate__bounceInLeft">Bi</span><span>SCE</span><span>NIC</span>
-        </h1>
+    <header class=" d-none d-md-block position-relative " style="height: 750px;">
+      <!-- Video Background -->
+      <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden" style="height: 700px;">
+          <video autoplay loop muted playsinline class="w-100 h-100 object-fit-cover">
+              <source src="/videos/LUMIVASE.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          <!-- Overlay -->
+          <div class="position-absolute top-0 start-0 w-100 h-100 overlay"></div>
+        </div>
+  
+      <!-- Content -->
+      <div class="container position-relative text-center text-white" style="padding-top: 14%;">
+          <h1 class="animate__animated animate__fadeIn animate__slow animate__delay-1s responsive-text">
+              <span class="animate__animated animate__bounceInLeft">Bi</span><span>SCE</span><span>NIC</span>
+          </h1>
       </div>
-    </header>
+  </header>
+  
+  
+    
 <!-- mobile header display section -->
-    <header class="banner1-mobile d-block d-md-none" style="padding-top: 150px; padding-bottom: 100px;">
-      <div class="text-center text-white" style="padding-top: 10%;">
-        <h1 class=" text-white animate__animated animate__slideInDown animate__slow" style="font-size: 60px;">B</h1>
-        <h1 class=" text-white animate__animated animate__bounceInLeft animate__slow" style="font-size: 60px;">i</h1>
-        <h1 class=" text-white animate__animated animate__bounceInRight animate__slow" style="font-size: 60px;">S</h1>
-        <h1 class=" text-white animate__animated animate__bounceInLeft animate__slow" style="font-size: 60px;">C</h1>
-        <h1 class=" text-white animate__animated animate__bounceInRight animate__slow" style="font-size: 60px;">E</h1>
-        <h1 class=" text-white animate__animated animate__bounceInLeft animate__slow" style="font-size: 60px;">N</h1>
-        <h1 class=" text-white animate__animated animate__slideInUp animate__slow" style="font-size: 60px;">I</h1>
-        <h1 class=" text-white animate__animated animate__fadeIn animate__slower animate__delay-1s" style="font-size: 60px;">C</h1>
+<header class="d-block d-md-none" style="padding-top: 100px; padding-bottom: 100px;">
+  <!-- Video Background -->
+  <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+      <video autoplay loop muted playsinline class="w-100 h-100 object-fit-cover">
+          <source src="/videos/LUMIVASE.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <!-- Overlay -->
+      <div class="position-absolute top-0 start-0 w-100 h-100 overlay"></div>
+  </div>
 
-      </div>
-    </header>
+  <!-- Text Content with Animations -->
+  <div class="text-center text-white position-relative " style="z-index: 1;">
+      <h1 class="text-white animate__animated animate__slideInDown animate__slower" style="font-size: 60px;">B</h1>
+      <h1 class="text-white animate__animated animate__bounceInLeft animate__slower" style="font-size: 60px;">i</h1>
+      <h1 class="text-white animate__animated animate__bounceInRight animate__slower" style="font-size: 60px;">S</h1>
+      <h1 class="text-white animate__animated animate__bounceInLeft animate__slower" style="font-size: 60px;">C</h1>
+      <h1 class="text-white animate__animated animate__bounceInRight animate__slower" style="font-size: 60px;">E</h1>
+      <h1 class="text-white animate__animated animate__bounceInLeft animate__slower" style="font-size: 60px;">N</h1>
+      <h1 class="text-white animate__animated animate__slideInUp animate__slower" style="font-size: 60px;">I</h1>
+      <h1 class="text-white animate__animated animate__fadeIn animate__slower animate__delay-1s" style="font-size: 60px;padding-bottom: 50px;">C</h1>
+  </div>
+</header>
+
     
     
     <!-- Endpoint header -->
@@ -107,9 +130,9 @@
                   
               </div>
             </div>
-            <div class="col-12 col-md-7 d-flex justify-content-center gap-2 flex-wrap">
-              <img src="images/banner2.png" alt="Image 1" class="img-fluid" style="max-width: 48%;">
-              <img src="images/banner2:1.png" alt="Image 2" class="img-fluid" style="max-width: 48%;">
+            <div class="col-12 col-md-5 pt-4 justify-content-center">
+              <img src="images/bg1.png" alt="Image 1" class="img-fluid" style="max-width: 100%;">
+             
             </div>
           </div>
         </div>
@@ -125,7 +148,7 @@
             <div class="row justify-content-center">
               <!-- Image Column -->
               <div class="col-md-6 d-flex justify-content-center">
-                <img src="images/vase4.jpeg" class="img-fluid rounded" alt="">
+                <img src="images/Lumi8.jpg" class="img-fluid rounded" style="height: 550px;" alt="">
               </div>
               <!-- Text Column -->
               <div class="col-md-6 d-flex align-items-center justify-content-center px-3">
@@ -136,7 +159,7 @@
                     <p>Join us on a journey of discovery and let your wardrobe speak volumes about your personality. With Biscenic, every piece is a statement, every look is a story.</p>
                   </div>
                   <!-- Centered Buttons -->
-                  <div class="d-flex  justify-content-center">
+                  <div class="d-flex p-5  justify-content-center">
                     <a href="{{ url_for('about') }}" class="custom-btn mx-2 custom-btn-type1">
                       <span class="custom-btn-txt">LEARN MORE</span>
                     </a>
@@ -176,11 +199,11 @@
                  <div class="col-md-7 d-flex">
                     <div class="row justify-content-center">
                         <div class="col-md-6">
-                            <img src="images/whyus.jpg" style="height: 600px;" width="100%" alt="" class="img-fluid rounded ">
+                            <img src="images/Lumi4.jpg" style="height: 550px;" width="100%" alt="" class="img-fluid rounded ">
                         </div>
                         <div class="mx-1 mt-5 col-md-4">
-                            <img src="images/whyus1.jpg " class=" py-2 rounded " style="height: 300px; border-radius: 10px;" width="100%" alt="">
-                            <img src="images/whyus2.jpg " class="py-2 rounded" style="height: 300px; border-radius: 10px;" width="100%" alt="">
+                            <img src="images/Lumi7.jpg " class=" py-2 rounded " style="height: 300px; border-radius: 10px;" width="100%" alt="">
+                            <img src="images/Lumi5.jpg " class="py-2 rounded" style="height: 300px; border-radius: 10px;" width="100%" alt="">
                         </div>
                     </div>
                  </div>
@@ -225,7 +248,12 @@
                     </ul>
                 </div>
                 <div class="col-md-3 text-center mb-3 mx-auto">
-                    <h4 class="pt-5 pb-3"  style="color: rgb(224, 224, 219);">Newsletter</h4>
+                    <h4 class="pt-5 pb-2"  style="color: rgb(224, 224, 219);">Newsletter</h4>
+                    <ul class="list-unstyled" style="font-size: 14px; color: rgb(197, 197, 193);">
+                      <li class="pb-2"><i class="fas fa-phone"> : +234 (814) (731) (9036)</i></li>
+                      <li class="pb-2"><i class="fas fa-location"> : 4 orchid road ,lagos </i></li>
+                      
+                  </ul>
                     <form action="" class="py-3 px-5">
                       <input type="text" class="form-control mb-3" placeholder="Enter your email">
                       <a href="#" class="d-block">
@@ -293,7 +321,7 @@
           </a>
           <ul class="dropdown-menu navbar-colored form-control" aria-labelledby="shopDropdown">
             <li><a class="dropdown-item text-white" href="all.html">All</a></li>
-            <li><a class="dropdown-item text-white" href="#">Furniture</a></li>
+            <li><a class="dropdown-item text-white" href="#">AI Lumivase</a></li>
             <li><a class="dropdown-item text-white"  href="#">LumiVase</a></li>
           </ul>
         </li>
