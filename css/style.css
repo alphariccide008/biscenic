@@ -1,9 +1,3 @@
-* {
-  box-shadow: 0;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-}
 
 .navbar {
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -30,6 +24,15 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.bigbag{
+  min-height: 1200px;
+}
+
+@media (max-width: 767px) {
+ .bigbag h1 {
+    font-size: 40px; /* Adjust as needed for mobile */
+  }
+}
 
 
   .nav-link li:hover {
@@ -49,31 +52,20 @@
 .overlay{
   background-color: rgba(0, 0, 0, 0.409);
 }
-.bigbag{
-  min-height: 1200px;
-}
 
-.newbanner{
-  min-height: 850px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-  url('/images/newbanner.jpg') no-repeat center center;
-  background-repeat: no-repeat;
-  background-size:cover;
-  background-position: center; 
-}
 
 
 
 .banner1-mobile{
   background-color: rgb(24, 24, 54);
   background: linear-gradient(to bottom, rgba(12, 51, 47, 0.7), rgba(16, 49, 35, 0.7)),
-  url('/images/.jpg') no-repeat center center;   
-  min-height: 1000px;
+  url('/images/footer2.jpg') no-repeat center center;   
+  min-height: 880px;
   background-repeat: no-repeat;
   background-size:cover;
   background-position: center;
 
-}
+
 /* Adjust min-height for smaller devices */
 @media (max-width: 896px) {
 .banner1-mobile {
@@ -87,7 +79,7 @@
 }
 }
 
-s
+}
 .banner2{
     background-color: rgb(24, 24, 54);
     background-image: url('/images/banner3.jpeg'); 
@@ -390,6 +382,7 @@ s
   background-color: rgb(24, 24, 54);
   background:url('/images/footer1.jpg') no-repeat center center;
   min-height: 450px;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size:cover;
   background-position: center;
