@@ -383,7 +383,6 @@ s
   background-color: rgb(24, 24, 54);
   background:url('/images/footer1.jpg') no-repeat center center;
   min-height: 450px;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size:cover;
   background-position: center;
