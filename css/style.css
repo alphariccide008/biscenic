@@ -24,7 +24,9 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-
+.bigbag{
+  min-height: 1200px;
+}
 
   .nav-link li:hover {
     transform: translateY(-3px);
@@ -41,7 +43,7 @@
   }
 
 .overlay{
-  background-color: rgba(14, 83, 14, 0.221);
+  background-color: rgba(0, 0, 0, 0.409);
 }
 
 
@@ -82,12 +84,84 @@
 
 }
 
+/* Image-carousel */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 600px; /* Image height */
+  overflow: hidden;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeInOut 20s infinite ease-in-out; /* Duration of the fade effect, with easing */
+}
+
+/* Fade-in and fade-out animation */
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  25%, 75% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Delay each image to fade in and out at different times */
+.image-container img:nth-child(1) {
+  animation-delay: 5s;
+}
+
+.image-container img:nth-child(2) {
+  animation-delay: 8s;
+}
+
+.image-container img:nth-child(3) {
+  animation-delay: 12s;
+}
+
+.image-container img:nth-child(4) {
+  animation-delay: 16s;
+}
+
+.image-container img:nth-child(5) {
+  animation-delay: 19s;
+}
+
+
 
 /* Hero section */
+.realpad{
+  padding-top:10% ;
+}
+.hero-front{
+  background-color: #050505;
+  color: #e2dbdb;
+  min-height: 1000px;
+}
+.hero-color{
+  color: #f5f4f4;
+}
 .hero{
+  background: linear-gradient(to bottom, rgb(159, 158, 158) 0%, white 100%);
+  min-height: 1000px;
+  
+
+}
+
+.hero-img{
   background-color: rgb(24, 24, 54);
-  background: linear-gradient(to bottom, rgba(8, 77, 69, 0.6), rgba(15, 70, 46, 0.3)),
-  url('/images/Lumi2.jpg') no-repeat center center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)),
+  url('/images/newbanner.jpg') no-repeat center center;
   min-height: 1000px;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -101,7 +175,7 @@
   margin: 0px;
   padding: 20px 15px;
   text-align: justify;
-  color: rgb(207, 207, 207);
+  color: rgb(0, 0, 0);
   text-justify: inter-word; /* Adds more natural spacing */
   hyphens: auto; /* Allows hyphenation to reduce spacing gaps */
 }
@@ -179,7 +253,7 @@
 /* Responsive Adjustments */
 @media (max-width: 576px) {
   .section-title {
-      font-size: 1.75rem; /* Smaller title font size */
+      font-size: 300px; /* Smaller title font size */
   }
 
   .section-description {
@@ -290,7 +364,7 @@
 
 .section-description {
   font-size: 1.125rem;
-  color: #555;
+  color: #a6a4a4;
   margin-bottom: 30px;
 }
 
@@ -299,9 +373,8 @@
 /* footer */
 .footer{
   background-color: rgb(24, 24, 54);
-  background: linear-gradient(to bottom, rgba(13, 35, 32, 0.8), rgba(13, 46, 31, 0.8)),
-  url('/images/footer1.jpg') no-repeat center center;
-  min-height: 400px;
+  background:url('/images/footer1.jpg') no-repeat center center;
+  min-height: 450px;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size:cover;
@@ -379,7 +452,7 @@
 
 
 .responsive-text {
-  font-size: 24px; /* Smaller text for mobile */
+  font-size: 2px; /* Smaller text for mobile */
 }
 
 /* Larger text for tablets and up */
