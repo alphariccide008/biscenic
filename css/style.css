@@ -1,3 +1,9 @@
+* {
+  box-shadow: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
 
 .navbar {
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -24,9 +30,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.bigbag{
-  min-height: 1200px;
-}
+
 
   .nav-link li:hover {
     transform: translateY(-3px);
@@ -44,6 +48,9 @@
 
 .overlay{
   background-color: rgba(0, 0, 0, 0.409);
+}
+.bigbag{
+  min-height: 1200px;
 }
 
 .newbanner{

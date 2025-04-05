@@ -374,8 +374,72 @@
               });
           </script>
           
-      
-         
+          <footer class="footer mt-5">
+            <div class="row text-center justify-content-center">
+               <div class="col-md-10 pt-5">
+                <div class="row">
+                    <div class="col-md-3 px-2">
+                        <h1 class="section-title text-center pt-5" >BiSCENIC</h1>
+                        <p style="font-size: 14px; ;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos explicabo soluta harum quam autem, sapiente, ea dolorem facilis, sit amet laborum?</p>
+                        <div  >
+                            <i class="fab fa-facebook f px-2"></i>
+                            <i class="fab  fa-instagram i px-2"></i>
+                            <i class="fab  fa-twitter t px-2"></i>
+                            <i class="fab fa-tiktok tik px-2"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="pt-5 pb-3" >Services</h4>
+                        <ul style="font-size: 14px;" class="list-unstyled">
+                            <li class="pb-2">Room Decoration</li>
+                            <li class="pb-2">Exterior Design</li>
+                            <li class="pb-2">Furniture Design</li>
+                            <li class="pb-2">Interior Design</li>
+                            <li class="pb-2">AI Lumivase</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="pt-5 pb-3" >Support</h4>
+                        <ul class="list-unstyled" style="font-size: 14px;">
+                            <li class="pb-2">Privacy Polidy</li>
+                            <li class="pb-2">Terms Of Services</li>
+                            <li class="pb-2">Credit</li>
+                            <li class="pb-2">FAQ</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 text-center mb-3 mx-auto">
+                        <h4 class="pt-5 pb-2">Newsletter</h4>
+                        <ul class="list-unstyled" style="font-size: 14px;">
+                          <li class="pb-2"><i class="fas fa-phone"> : +234 (814) (731) (9036)</i></li>
+                          <li class="pb-2"><i class="fas fa-location"> : 4 orchid road ,lagos </i></li>
+                          
+                      </ul>
+                        <form action="" class="py-3 px-5">
+                          <input type="text" class="form-control mb-3" placeholder="Enter your email">
+                          <a href="#" class="d-block">
+                            <div class="button-icon d-flex justify-content-center">
+                              <div class="cube   text-center">
+                                <span class="side  front">Subscribe</span>
+                                <span class="side top">Subscribe Now</span>
+                              </div>
+                            </div>
+                          </a>
+                        </form>
+                      </div>
+                      
+                </div>
+               </div>
+            </div>
+            <hr class="text-white">
+           <div class="text-center py-3">
+            <p  style="color: rgb(224, 224, 219);"> &copy; 2025 BiSCENIC. All rights reserved</p>
+           </div>
+    
+         </footer>
+     
+          
+
+
         
       </body>
       
