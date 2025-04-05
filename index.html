@@ -127,7 +127,7 @@
               </div>
             </div>
             
-            <div class="col-12 px-5 col-md-4 justify-content-center" style="padding-top: 15%; padding-bottom: 15%;">
+            <div class="col-12  col-md-4 justify-content-center" style="padding-top: 15%; padding-bottom: 15%;">
               <div class="image-container">
                 <!-- 5 Images with fade effect -->
                 <img src="images/Lumi1.jpg" alt="Image 1" class="img-fluid rounded">
@@ -154,8 +154,34 @@
                 <img src="images/lumi11.jpg" class="img-fluid rounded" style="height: 550px;" alt="">
               </div>
               <!-- Text Column -->
-              
+              <div class="col-md-6 d-flex align-items-center justify-content-center px-3 d-none d-sm-block">
+                <div data-aos="fade-left" class="introsection">
+                  <h2 class="section-title text-center pt-4" style="font-size: 60px;">Introducing AI LumiVase</h2>
+                  <div class="introtext p-3">
+                    <p>At Biscenic, we believe that fashion is more than just blahblah an expression of your identity. Our carefully curated collections are designed to inspire, empower, and transform your style into a signature of elegance.</p>
+                    <p>Join us on a journey of discovery and let your wardrobe speak volumes about your personality. With Biscenic, every piece is a statement, every look is a story.</p>
+                  </div>
+                  <!-- Centered Buttons -->
+                  <div class="d-flex p-5 justify-content-center">
+                    <a href="{{ url_for('about') }}" class="custom-btn mx-2 text-dark custom-btn-type1">
+                      <span class="custom-btn-txt">LEARN MORE</span>
+                    </a>
+                    <a href="{{ url_for('about') }}" class="custom-btn custom-btn-type1">
+                      <span class="custom-btn-txt">SHOP NOW</span>
+                    </a>
+                  </div>
+                </div>
               </div>
+              
+              <!-- mobile device -->
+               <div class="col-md-6 " >
+                <h1 class="section-title px-2" style="padding-top: 20%;">Introducing AI LumiVase</h1>
+                <div class="section-description">
+                  <p>At Biscenic, we believe that fashion is more than just blahblah an expression of your identity. Our carefully curated collections are designed to inspire, empower, and transform your style into a signature of elegance.</p>
+                  <p>Join us on a journey of discovery and let your wardrobe speak volumes about your personality. With Biscenic, every piece is a statement, every look is a story.</p>
+                </div>
+               </div>
+              
             </div>
           </div>
         </div>
@@ -208,7 +234,7 @@
                 <div class="col-md-3 px-2">
                     <h1 class="section-title text-center pt-5" >BiSCENIC</h1>
                     <p style="font-size: 14px; ;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos explicabo soluta harum quam autem, sapiente, ea dolorem facilis, sit amet laborum?</p>
-                    <div  >
+                    <div style="font-size: 20px;" >
                         <i class="fab fa-facebook f px-2"></i>
                         <i class="fab  fa-instagram i px-2"></i>
                         <i class="fab  fa-twitter t px-2"></i>
@@ -244,11 +270,10 @@
                     <form action="" class="py-3 px-5">
                       <input type="text" class="form-control mb-3" placeholder="Enter your email">
                       <a href="#" class="d-block">
-                        <div class="button-icon d-flex justify-content-center">
-                          <div class="cube   text-center">
-                            <span class="side  front">Subscribe</span>
-                            <span class="side top">Subscribe Now</span>
-                          </div>
+                        <div class="linkbtn pt-3 pb-5 d-flex justify-content-center">
+                          <a href="#" class="btn-link2 form-control">
+                            <span>SUBSCRIBE NOW</span>
+                          </a>
                         </div>
                       </a>
                     </form>

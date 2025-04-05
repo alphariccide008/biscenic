@@ -129,7 +129,7 @@
 
 /* Delay each image to fade in and out at different times */
 .image-container img:nth-child(1) {
-  animation-delay: 5s;
+  animation-delay: 0s;
 }
 
 .image-container img:nth-child(2) {
@@ -183,6 +183,12 @@
 @media (max-width: 768px) {
   .hero-img {
     background-attachment: scroll; /* Disable parallax effect on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h2{
+    font-size: 30px; /* Disable parallax effect on mobile */
   }
 }
 
@@ -385,7 +391,6 @@
   background-color: rgb(24, 24, 54);
   background: url('/images/footer1.jpg') no-repeat center center;
   min-height: 450px;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
