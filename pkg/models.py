@@ -12,12 +12,16 @@ class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
     price = db.Column(db.Integer)
+    desc = db.Column(db.String(688), nullable=False)
+    filename = db.Column(db.String(256), nullable=False)
 
 class CartItem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     product_id = db.Column(db.Integer, db.ForeignKey('product.id'))
+   
     product = db.relationship('Product')
+   
 
 class Transaction(db.Model):
     id = db.Column(db.Integer, primary_key=True)

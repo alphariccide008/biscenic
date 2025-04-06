@@ -5,6 +5,7 @@
     
     <section>
         <div class="row  justify-content-center">
+            {% if items %}
             <div class="col-md-10 ">
                 <h1 class="section-title px-4" style="padding-top: 30%;"> SHOPPING CART</h1>
                 <div class="row px-4 pt-5">
@@ -44,6 +45,14 @@
                     </div>
                 </div>
             </div>
+            {% else%}
+            <div class="row justify-content-center" style="margin-top: 200px;">
+                <div class="col-md-6 text-center">
+                    <h1 class="">Your Cart is empty</h1>
+                    <a href="{{ url_for('all')}}" class=" my-5 btn btn-dark text-white"><i class="fas fa-arrow-left" ></i> View All Product</a>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </section>
 

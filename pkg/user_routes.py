@@ -82,7 +82,20 @@ def about():
 @app.route("/all-product")
 def all():
     products = Product.query.all()
-    return render_template("index.html", products=products)
+    return render_template("users/all.html", products=products)
+
+@app.route("/viewproduct/<id>")
+def viewall(id):
+    products = Product.query.all()
+    return render_template("users/all.html", products=products)
+
+
+
+
+
+
+# tem. Add product
+
 
 @app.route("/add-to-cart/<int:product_id>")
 def add_to_cart(product_id):
@@ -92,12 +105,20 @@ def add_to_cart(product_id):
     db.session.commit()
     return redirect(url_for('cart'))
 
+
+
+
+
 @app.route("/cart")
 def cart():
     user_id = session.get('user_id')
     cart_items = CartItem.query.filter_by(user_id=user_id).all()
     total = sum(item.product.price for item in cart_items)
     return render_template("users/cart.html", items=cart_items, total=total)
+
+
+
+
 
 @app.route("/pay", methods=["POST"])
 def pay():
@@ -159,8 +180,44 @@ def after_request(response):
 
 
 
+# Temporary add product page
 
 
+
+# @app.route('/addproduct',methods=['POST','GET'])
+# def addporduct():
+#     userdeets = db.session.query(Product).all()
+#     if request.method == "GET":
+#       return render_template("users/addproduct.html",userdeets=userdeets,uploadfile=uploadfile)
+#     else:
+#          if request.method =='GET':
+#             deets= db.session.query(Product).all()
+#             return render_template('users/uploadproject.html',deets=deets,userdeets=userdeets)
+#          else:
+#             #retrieve the file
+#             allowed=['jpg','png']
+#             filesobj=request.files['projectdp']
+#             filename=filesobj.filename
+#             newname='Default.png'
+#             #validation
+#             if filename=='':
+#                 flash('Please Choose project',category='error')
+#             else:                
+#                 pieces=filename.split('.')
+#                 ext=pieces[-1].lower()
+#                 if ext in allowed:
+#                     newname=str(int(random.random()*10000000))+filename
+#                     filesobj.save('pkg/static/uploads/'+ newname)
+#                 else:
+#                     flash("Not Allowed, File Type Must Be ['jpg','png'], File was not uploades",category='error')
+#             newfile=newname
+#             desc=request.form.get('projectdescription')
+#             price =request.form.get('projectprice')
+#             uploader = Userupload(upload_amt=price, upload_desc=desc ,upload_filename=newfile,upload_user_id =id)
+#             db.session.add(uploader)
+#             db.session.commit()
+#             return redirect(url_for('profile_view'))
+            
 
 
 
