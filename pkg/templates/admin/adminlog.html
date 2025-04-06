@@ -1,0 +1,37 @@
+{% extends "users/index.html" %}
+
+{% block content %} 
+<div class="row justify-content-center" style="padding-top: 50px;">
+    <div class="col-md-9 " >
+        <div class="row justify-content-center px-3">
+            <div class="col-md-7" style="padding-top: 100px; padding-bottom: 100px;">
+                <div class="contain justify-content-center" id="container">
+                    
+                    <div class="form-container sign-in">
+                        {% include "users/_messages.html" %}
+                        <form method="post" style="padding-top: 50%;">
+                            <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                            <h1>Sign In</h1>
+                            <input type="email" name="email" placeholder="Email">
+                            <input type="password" name="pwd" placeholder="Password">
+                            <button type="submit">Log In</button>
+                            <div class="toggle-container">
+                                <div class="toggle ">
+                                    <div class="toggle-panel toggle-right">
+                                        <h1>Welcome Back Admin</h1>
+                                        <p>Register Your personal details to use all of site features</p>
+                                        
+                                </div>
+                            </div>
+                           
+                        </form>
+                    </div>
+                  
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content%}

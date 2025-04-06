@@ -1,0 +1,52 @@
+{% extends 'users/semi-layout.html'%}
+    
+{% block content %} 
+    <!-- Shopping Caert Hero section -->
+    
+    <section>
+        <div class="row  justify-content-center">
+            <div class="col-md-10 ">
+                <h1 class="section-title px-4" style="padding-top: 30%;"> SHOPPING CART</h1>
+                <div class="row px-4 pt-5">
+                    <div class="col-md-8 ">
+                        <table class="table  table-borderless">
+                            <tbody>
+                              <tr class="section-description pt-4">
+                               <td class="pt-4" style="font-size: 12px;">X</td>
+                                <td><img src="/static/images/Lumi5.jpg" class="img-fluid rounded" style="height: 60px;" alt=""></td>
+                                <td class="pt-4">AI Luminvase</td>
+                                <td class="p-4">$ 600.00</td>
+                                <td class="p-4">1</td>
+                              </tr>
+                             
+                            </tbody>
+                          </table>
+                          <hr>
+                          <a class=" section-description" href="{{ url_for('all')}}">
+                            <i class="fas fa-arrow-left"> Go Back Shopping</i>
+                          </a>
+
+                    </div>
+                    <div class="col-md-4 py-5">
+                        <h1 class="pb-3 section-title">CART TOTALS</h1>
+                        <P class="section-description">SUBTOTAL : $600.00</P>
+                        <P class="section-description">SHIPPING : Free Shipping</P>
+
+                       
+
+                        <hr>
+                       <div class="d-flex">
+                        <h1 class="section-title">TOTAL </h1>
+                        <h4 class="text-end  pt-2" style="padding-left: 35%;">$ 600.00</h4>
+                       </div>
+                       <button class="form-control btn btn-dark">PROCEED TO CHECKOUT</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+{% endblock content%}

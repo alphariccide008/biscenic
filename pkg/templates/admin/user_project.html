@@ -1,0 +1,52 @@
+{% extends "admin/adminlayout.html" %}
+{% block content %}
+
+<div class="row justify-content-center my-5">
+    <div class="col-md-10 bg-white">
+        <h4 class="text-center py-3"><b>ALL PROJECTS</b></h4>
+        {% if updeets%}
+        <table class="table table-stripped text-center">
+            {% set m = get_flashed_messages(with_categories=True)%}
+                        {% for x,y in m%}
+                            {% if x =='projecterror': %}
+                                <div class="alert alert-success text-center">{{y}}</div>
+                            {% else: %}
+                                <div class="alert alert-success mt-2 text-center">{{y}}</div>
+                            {% endif %}
+                        {%endfor%}
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Owner's FullName</th>
+                    <th>Project Image</th>
+                    <th>Description</th>
+                    <th>price</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for x in updeets %}
+                <tr>
+                    <td>{{ loop.index}} .</td>
+                    <td>{{x.userupload.user_fname}} {{x.userupload.user_fname}}</td>
+                   <td><img src="/static/uploads/{{x.upload_filename}}" alt="" height="100"></td>
+                    <td>{{x.upload_desc}}</td>
+                    <td>&#8358;{{ x.upload_amt}}</td>
+                    <td><a href="{{ url_for('upload_delete',id=x.upload_id)}}" class="btn btn-danger">Delete</a></td>
+                    
+                </tr>
+                {% endfor%}
+               
+            </tbody>
+
+
+        </table>
+       {% else %}
+       <div class="text-center alert alert-info">NO USER FOUND</div>
+        {% endif %}
+        
+
+    </div>
+</div>
+{% endblock content%}

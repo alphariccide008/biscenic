@@ -1,0 +1,20 @@
+{% extends "admin/adminlayout.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-9">
+        <div class="row justify-content-center">
+            <div class="col-md-5" style="margin-bottom: 250px; margin-top: 250px;">
+                <form action="{{ url_for('edit_balance', di=user.user_id) }}" method="post" class="px-4 py-5 bg-white">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <h2 class="text-center">EDIT BALANCE</h2>
+                    <input type="text" name="btcbalance" class="form-control my-4" placeholder="BTC Balance" value="{{ user.btc_balance }}">
+                    <input type="text" name="ethbalance" class="form-control my-4" placeholder="ETH Balance" value="{{ user.eth_balance }}">
+                    <input type="text" name="freezed" class="form-control my-4" placeholder="Freezed Balance" value="{{ user.freezed_balance }}">
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

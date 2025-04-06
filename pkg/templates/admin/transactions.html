@@ -1,0 +1,52 @@
+{% extends "admin/adminlayout.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-4">
+    <div class="col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-md-11">
+                <h1 class="text-center py-5">Transaction History</h1>
+                {% include "users/_messages.html" %}
+                {% if deets %}
+                <table class="table table-striped text-center table-bordered bg-white">
+                    <thead>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Full Name</th>
+                            <th>Transaction Plan</th>
+                            <th>Transaction Type</th>
+                            <th>Transaction Amount</th>
+                            <th>Transaction Action</th>
+                            <th>Transaction Status</th>
+                            <th>Transaction Date</th>
+                            <th colspan="2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in deets %}
+                        
+                        <tr>
+                            <td>{{ loop.index }}.</td>
+                            <td>{{ user.user.fname }} {{ user.user.lname }}</td>
+                            <td>{{ user.trans.trans_name}}</td>
+                            <td>{{ user.trans.trans_plan}}</td>
+                            <td>+${{ user.trans.trans_amount}}.00</td>  
+                            <td>{{ user.trans.trans_action }}</td>
+                            <td>{{ user.trans.trans_status }}</td>
+                            <td>{{ user.trans.trans_date }}</td>
+
+                            <td><a href="{{ url_for('confirm',id=user.trans.trans_id)}}" class="btn btn-success">Confirm</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <div class="alert alert-info text-center">
+                    No transactions found.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

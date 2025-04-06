@@ -1,0 +1,50 @@
+{% extends "users/dashboard.html"%}
+
+{% block content %}
+
+
+
+<div class="row justify-content-center">
+    <div class="col-md-9 mt-5">
+        <div class="row justify-content-center px-5">
+            <div class="col-md-6 text-center bg-white " style="border-radius: 5px;">
+                <h3><i class="fa-brands fa-ethereum text-primary py-3"></i> ETH </h3>
+                <img src="/static/images/goldETH.jpg" class="img-fluid" alt="" style="height: 70%;">
+               <h3 class="pt-5">click to copy address <a><i class="fa-solid fa-copy" onclick="copyT()"></i><p class="textToCop" style="display: none;">0xD01E05cFdc476607a153fA4E2E66D2C50d82A4fA</p></a></h3>
+               
+            </div>
+            <p  class="text-success copyMsg text-center" style="display:none;">Address copied to clipboard!</p>
+            
+        </div>
+    </div>
+    
+</div>
+<div class="row justify-content-center mt-3">
+    <div class="col-md-9">
+        <div class="row justify-content-center px-5">
+            <div class="col-md-6 text-center">
+                <form action="{{ url_for('ethupload')}}" class="card p-3" enctype="multipart/form-data" method="post">
+                    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                    {% include "users/_messages.html" %}
+                    <h2 class="text-center">Upload Reciept</h2>
+                    <input type="text" class="form-control my-2" placeholder="Input amount" name="amount" id="">
+                    <select name="transplan" class="form-control my-2" id="">
+                        <option value="">--select plan--</option>
+                        <option value="Basic Top-up">Basic Top-up</option>
+                        <option value="Starters Plan"> Starters Plan</option>
+                        <option value="Pro plan">Pro plan</option>
+                        <option value="Premium plan">Premium plan</option>
+                        <option value="Gold Premium Plan">Gold Premium Plan</option>
+                        <option value="Pinnacle plan">Pinnacle plan</option>
+                    </select>
+                    <input type="file" class="form-control my-2" name="image">
+                    <input type="hidden" name="name" value="ETHXXXXXXXXX" >
+                    <input type="hidden" name="action" value="Credit">
+                    <button type="submit" class="btn btn-outline-primary form-control">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
