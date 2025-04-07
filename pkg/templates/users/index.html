@@ -77,6 +77,16 @@
                       <span>LEARN MORE</span>
                     </a>
                   </div>
+                  <div class="col-md-4">
+                    {% set m = get_flashed_messages(with_categories=True) %}
+                    {% for x, y in m %}
+                      {% if x == 'error' %}
+                        <div class="alert alert-danger">{{ y }}</div>
+                      {% else %}
+                        <div class="alert alert-success mt-2">{{ y }}</div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
                   
               </div>
             </div>

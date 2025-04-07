@@ -1,61 +1,76 @@
-{% extends 'users/semi-layout.html'%}
-    
-{% block content %} 
-    <!-- Shopping Caert Hero section -->
-    
-    <section>
-        <div class="row  justify-content-center">
-            {% if items %}
-            <div class="col-md-10 ">
-                <h1 class="section-title px-4" style="padding-top: 30%;"> SHOPPING CART</h1>
-                <div class="row px-4 pt-5">
-                    <div class="col-md-8 ">
-                        <table class="table  table-borderless">
-                            <tbody>
-                              <tr class="section-description pt-4">
-                               <td class="pt-4" style="font-size: 12px;">X</td>
-                                <td><img src="/static/images/Lumi5.jpg" class="img-fluid rounded" style="height: 60px;" alt=""></td>
-                                <td class="pt-4">AI Luminvase</td>
-                                <td class="p-4">$ 600.00</td>
-                                <td class="p-4">1</td>
-                              </tr>
-                             
-                            </tbody>
-                          </table>
-                          <hr>
-                          <a class=" section-description" href="{{ url_for('all')}}">
-                            <i class="fas fa-arrow-left"> Go Back Shopping</i>
-                          </a>
-
-                    </div>
-                    <div class="col-md-4 py-5">
-                        <h1 class="pb-3 section-title">CART TOTALS</h1>
-                        <P class="section-description">SUBTOTAL : $600.00</P>
-                        <P class="section-description">SHIPPING : Free Shipping</P>
-
-                       
-
-                        <hr>
-                       <div class="d-flex">
-                        <h1 class="section-title">TOTAL </h1>
-                        <h4 class="text-end  pt-2" style="padding-left: 35%;">$ 600.00</h4>
-                       </div>
-                       <button class="form-control btn btn-dark">PROCEED TO CHECKOUT</button>
-                    
-                    </div>
-                </div>
+{% extends 'users/semi-layout.html' %}
+{% block content %}
+<!-- Shopping Cart Hero section -->
+<section>
+<div class="row justify-content-center">
+    {% if items %}
+    <div class="col-md-10">
+        <h1 class="section-title px-4" style="padding-top: 30%;">SHOPPING CART</h1>
+        <div class="row px-4 pt-5">
+            <div class="col-md-8">
+                <table class="table table-borderless">
+                    <tbody>
+                        {% for item in items %}
+                        <tr class="section-description pt-4">
+                            <td class="pt-4" style="font-size: 12px;">
+                                <a href="{{ url_for('remove_from_cart', item_id=item.id) }}" class="text-danger" style="cursor: pointer;">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <img src="/static/images/{{ item.filename or 'default-image.jpg' }}" class="img-fluid rounded" style="height: 60px;" alt="{{ item.product.name }}">
+                            </td>
+                            <td class="pt-4">{{ item.product.name }}</td>
+                            <td class="p-4">${{ item.product.price * item.quantity }}</td>
+                            <td class="p-4">{{ item.quantity }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <hr>
+                <a class="section-description" href="{{ url_for('all') }}">
+                    <i class="fas fa-arrow-left"> Go Back Shopping</i>
+                </a>
             </div>
-            {% else%}
-            <div class="row justify-content-center" style="margin-top: 200px;">
-                <div class="col-md-6 text-center">
-                    <h1 class="">Your Cart is empty</h1>
-                    <a href="{{ url_for('all')}}" class=" my-5 btn btn-dark text-white"><i class="fas fa-arrow-left" ></i> View All Product</a>
+            <div class="col-md-4 py-5">
+                <h1 class="pb-3 section-title">CART TOTALS</h1>
+                <p class="section-description">SUBTOTAL: ${{ total }}</p>
+                <p class="section-description">SHIPPING: Free Shipping</p>
+                <hr>
+                <div class="d-flex">
+                    <h1 class="section-title">TOTAL</h1>
+                    <h4 class="text-end pt-2" style="padding-left: 35%;">${{ total }}</h4>
                 </div>
+
+                <!-- Checkout Form -->
+                <form action="{{ url_for('checkout') }}" method="POST">
+                    <!-- Email input field for checkout -->
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <div class="form-group">
+                        <label for="fullname">FullName</label>
+                        <input type="text" name="name" id="email" class="form-control" required placeholder="Enter your fullname">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" class="form-control" required placeholder="Enter your email">
+                        <label for="fullname">Address</label>
+                        <input type="text" name="address" id="email" class="form-control" required placeholder="Enter your Home address">
+                    </div>
+
+                    <!-- Proceed to Checkout Button -->
+                    <button class="form-control btn btn-dark mt-3" type="submit">PROCEED TO CHECKOUT</button>
+                </form>
             </div>
-            {% endif %}
         </div>
-    </section>
-
- 
-
-{% endblock content%}
+    </div>
+    {% else %}
+    <div class="row justify-content-center" style="margin-top: 200px;">
+        <div class="col-md-6 text-center">
+            <h1>Your Cart is Empty</h1>
+            <a href="{{ url_for('all') }}" class="my-5 btn btn-dark text-white">
+                <i class="fas fa-arrow-left"></i> View All Products
+            </a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+</section>
+{% endblock content %}

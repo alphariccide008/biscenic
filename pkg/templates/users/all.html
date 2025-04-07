@@ -12,19 +12,22 @@
                     {% if products %}
                       {% for product in products %}
                     <div class="col-md-4 py-5">
-                        <img src="/static/images/Lumi5.jpg" class="img-fluid rounded" style="height: 600px; width: 100%;" alt="">
+                        <a href="{{url_for('viewall',id=product.id)}}">
+                          <img src="/static/images/{{ product.filename}}" class="img-fluid rounded" style="height: 600px; width: 100%;" alt="">
+                        </a>
                         <p class="pt-3">{{ product.name }}</p>
                         <p>${{ product.price }}</p>
                       
                         <!-- Quantity Selector -->
                         <div class="d-flex">
-                          <a class="btn btn-outline-dark" id="decrementBtn">-</a>
-                          <input type="number" class="form-control text-center" id="quantityInput" value="1" min="1" style="width: 60px;" readonly>
-                          <a class="btn btn-outline-dark" id="incrementBtn">+</a>
+                         
+                          <input type="number" class="form-control text-center" id="quantityInput" value="1" min="1" style="width: 60px;" readonly>                          
+
+                          
                         </div>
                       
                         <!-- Add to Cart Button -->
-                        <a class="btn btn-success mt-3" id="addToCartBtn">Add to Cart</a>
+                        <a class="btn btn-success mt-3" href="{{ url_for('add_to_cart', id=product.id) }}" id="addToCartBtn">Add to Cart</a> 
                     </div>
                     {% endfor %}
                     {% else %}

@@ -51,7 +51,7 @@
             <ul class="navbar-nav mb-2 mb-lg-0 text-center px-5 ms-lg-3">
               <li class="nav-item"><a class="nav-link text-white px-4" href="{{ url_for('home') }}"><i class="fas fa-home"></i></a></li>
               <li class="nav-item"><a class="nav-link px-4 text-white" href="{{ url_for('cart')}}"><i class="fas fa-shopping-cart"></i>
-            <span class="cart-badge">0</span>
+                <span class="cart-badge">{{ cart_count }}</span>
             
             </a></li>
             </ul>
