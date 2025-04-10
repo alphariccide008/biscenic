@@ -272,3 +272,113 @@ def editprofile():
 #         else:
 #             return render_template("users/register.html",reg=reg)
     
+
+
+
+
+# This is the email notifications
+        
+    from flask import Flask, render_template, request, redirect, flash, url_for
+from flask_mail import Message
+from yourapp import app, mail, db  # Import necessary modules
+from models import Transaction  # Make sure to import your models
+import os
+
+@app.route("/shipment_confirmation/<int:di>/")
+def payment_confirm(di):
+    # Query the transaction by ID
+    transaction = db.session.query(Transaction).filter_by(id=di).first()  # Use .first() to get the transaction
+
+    if transaction:  # Check if the transaction exists
+        # Update shipment status
+        transaction.shipment_status = 'shipped'
+        db.session.commit()
+        
+        # Email notification to customer
+        try:
+            # HTML Email Body
+            email_body = f"""
+            <html>
+            <head>
+                <style>
+                    body {{
+                        font-family: Arial, sans-serif;
+                        background-color: #f8f9fa;
+                        margin: 0;
+                        padding: 20px;
+                    }}
+                    .email-container {{
+                        max-width: 600px;
+                        margin: auto;
+                        padding: 20px;
+                        background-color: #ffffff;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    }}
+                    .email-header {{
+                        text-align: center;
+                        background-color: #007bff;
+                        color: white;
+                        padding: 10px 0;
+                        border-radius: 8px 8px 0 0;
+                    }}
+                    .email-header h2 {{
+                        margin: 0;
+                    }}
+                    .email-content {{
+                        padding: 20px;
+                    }}
+                    .email-footer {{
+                        text-align: center;
+                        font-size: 12px;
+                        color: #6c757d;
+                        padding-top: 10px;
+                    }}
+                    .btn {{
+                        display: inline-block;
+                        padding: 10px 20px;
+                        background-color: #28a745;
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 5px;
+                        margin-top: 10px;
+                    }}
+                </style>
+            </head>
+            <body>
+                <div class="email-container">
+                    <div class="email-header">
+                        <h2>Your Order Has Been Shipped!</h2>
+                    </div>
+                    <div class="email-content">
+                        <p>Dear {transaction.name},</p>
+                        <p>We are happy to inform you that your order has been shipped.</p>
+                        <p><strong>Order Reference:</strong> {transaction.reference}</p>
+                        <p>We hope you enjoy your purchase!</p>
+                        <a href="{url_for('orders', _external=True)}" class="btn">Track Your Order</a>
+                    </div>
+                    <div class="email-footer">
+                        <p>Thank you for shopping with us!</p>
+                        <p>Your Shop Team</p>
+                    </div>
+                </div>
+            </body>
+            </html>
+            """
+
+            msg = Message(
+                subject="Your Order Has Been Shipped!",
+                recipients=[transaction.email],  # Send email to the customer's email address
+                html=email_body  # Use the HTML content for the email
+            )
+            mail.send(msg)  # Send the email
+
+            flash('Product shipped and email notification sent', category='paymentmsg')
+
+        except Exception as e:
+            flash(f"Error sending email: {str(e)}", category='danger')
+
+    else:
+        flash('Transaction not found', category='danger')
+
+    return redirect(url_for('orders'))  # Redirect to the orders page
