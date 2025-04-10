@@ -1,148 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<meta name="keywords" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=pacifico&family=Raleway:wght@400;600;700&family=Lora:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<!-- <link rel="shortcut icon" href="/static/img/icons/icon-48x48.png" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
-	<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
-	<title>CryptoAdmin</title>
 
-	<link href="/static/css/app.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* div{
+            border: 1px solid red;
+            min-height: 100px;
+        } */
+    </style>
+
 </head>
-<style type="text/css">
-	body{
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
-	}
-</style>
 <body>
-	<div class="wrapper">
-		<nav id="sidebar" class="sidebar bg-danger js-sidebar">
-			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="">
-          <span class="align-middle"><span style="color: rgb(203, 149, 13);">Gold</span> Super Admin</span>
-        </a>
+   
+    <!-- Navbar -->
+    <nav id="mainNavbar" class="navbar text-white fixed-top navbar-expand-lg w-full navbar-colored ">
+      <div class="container">
+        <a class="navbar-brand section-title text-white" href="{{ url_for('home')}}">Super Admin</a>
+        <button class="navbar-toggler bg-light navIcon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+          <span class="text-white navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 text-center mx-5">
+            <li class="nav-item"><a class="nav-link text-white active px-5" href="{{url_for('home')}}">Home</a></li>
+            
+            <!-- Shop Dropdown -->
+           
+            
+           
+          </ul>
+        
+        </div>
+      </div>
+    </nav>
+  
+    
+    
+    
+    
+    
+    <!-- Endpoint for navbar -->
 
-				<ul class="sidebar-nav">
-					<li class="sidebar-header">
-						Pages
-					</li>
+  
+  
+    
+<!-- mobile header display section -->
 
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="{{ url_for('all_users')}}">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">All Users</span>
-            </a>
-					</li>
 
-					
 
-					
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="">
-              
-            </a>
-					</li>
-             
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url_for('edit_all_user')}}">
-              			<i class="align-middle" data-feather="map"></i> <span class="align-middle">Edit Balance</span>
-            </a>
-					</li>
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url_for('all_transaction')}}">
-              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Transaction History</span>
-            </a>
-					</li>
-				</ul>
+    
+    <!-- Endpoint header -->
+    {% block content %}
 
-				
-			</div>
-		</nav>
 
-		<div class="main">
-			<nav class="navbar navbar-expand navbar-light navbar-bg">
-				<a class="sidebar-toggle js-sidebar-toggle">
-          <i class="hamburger align-self-center"></i>
-        </a>
+    {% endblock content %}
 
-				<div class="navbar-collapse collapse">
-					<ul class="navbar-nav navbar-align">
-						<li class="nav-item dropdown">
-							
-							
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
-								<div class="position-relative">
-									<i class="align-middle" data-feather="message-square"></i>
-								</div>
-							</a>
-							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown">
-								<div class="dropdown-menu-header">
-									<div class="position-relative">
-										Notifications
-									</div>
-								</div>
-								
-								<div class="dropdown-menu-footer">
-									<a href="#" class="text-muted">Show all Notifications</a>
-								</div>
-							</div>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                <i class="align-middle" data-feather="settings"></i>
-              </a>
-							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-				<img src="/static/images/default.png" class="avatar img-fluid rounded me-1" alt="default image" />
-				
-				<span class="text-dark"><span style="color: rgb(186, 137, 15);">Gold</span> Admin</span>
-              </a>
-							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href=""><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+     <!-- footer -->
+     <footer class="footer mt-5">
+        <div class="row text-center justify-content-center">
+           <div class="col-md-10 pt-5">
+            <div class="row">
+                <div class="col-md-3 px-2">
+                    <h1 class="section-title text-center pt-5" >BiSCENIC</h1>
+                    <p style="font-size: 14px; ;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos explicabo soluta harum quam autem, sapiente, ea dolorem facilis, sit amet laborum?</p>
+                    <div style="font-size: px;" >
+                        <i class="fab fa-facebook f px-2"></i>
+                        <i class="fab  fa-instagram i px-2"></i>
+                        <i class="fab  fa-twitter t px-2"></i>
+                        <i class="fab fa-tiktok tik px-2"></i>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="pt-5 pb-3" >Services</h4>
+                    <ul style="font-size: 14px;" class="list-unstyled">
+                        <li class="pb-2">Room Decoration</li>
+                        <li class="pb-2">Exterior Design</li>
+                        <li class="pb-2">Furniture Design</li>
+                        <li class="pb-2">Interior Design</li>
+                        <li class="pb-2">AI Lumivase</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="pt-5 pb-3" >Support</h4>
+                    <ul class="list-unstyled" style="font-size: 14px;">
+                        <li class="pb-2">Privacy Polidy</li>
+                        <li class="pb-2">Terms Of Services</li>
+                        <li class="pb-2">Credit</li>
+                        <li class="pb-2">FAQ</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 text-center mb-3 mx-auto">
+                    <h4 class="pt-5 pb-2">Newsletter</h4>
+                    <ul class="list-unstyled" style="font-size: 14px;">
+                      <li class="pb-2"><i class="fas fa-phone"> : +234 (814) (731) (9036)</i></li>
+                      <li class="pb-2"><i class="fas fa-location"> : 4 orchid road ,lagos </i></li>
+                      
+                  </ul>
+                    <form action="" class="py-3 px-5">
+                      <input type="text" class="form-control mb-3" placeholder="Enter your email">
+                      <a href="#" class="d-block">
+                        <div class="linkbtn pt-3 pb-5 d-flex justify-content-center">
+                          <a href="#" class="btn-link2 ">
+                            <span>SUBSCRIBE NOW</span>
+                          </a>
+                        </div>
+                      </a>
+                    </form>
+                  </div>
+                  
+            </div>
+           </div>
+        </div>
+        <hr class="text-dark">
+       <div class="text-center py-3">
+        <p  style="color: rgb(17, 17, 17);"> &copy; 2025 BiSCENIC. All rights reserved</p>
+       </div>
 
-								<div class="dropdown-divider"></div>
+     </footer>
+    
+    
+      
+    
 
-								
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="{{url_for('admin_logout')}}">Log out</a>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</nav>
-            {% block content%}
-			
-            {% endblock content%}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
-			<footer class="footer">
-				<div class="container-fluid">
-					<div class="row text-muted">
-						
-						
-					</div>
-				</div>
-			</footer>
-		</div>
-	</div>
-	
-	<script src="/static/js/app.js"></script>
-	<script src="/static/js/jquery.min.js"></script>
-	{% block customjs%}
-	{% endblock%}
+    
 
-	
-
+   
+  
 </body>
 
+<!-- offcanvas body -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 id="offcanvasRightLabel ">BiSCENIC</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="#">
+        <a href="#" class="btn btn-outline-success form-control  py-3 mb-3">
+          Home
+        </a>
+        
+        <li class="nav-item list-unstyled dropdown">
+          <a href="#" class="btn btn-outline-success form-control py-3 mb-3 dropdown-toggle" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Shop
+          </a>
+          <ul class="dropdown-menu navbar-colored form-control" aria-labelledby="shopDropdown">
+            <li><a class="dropdown-item text-white" href="all.html">All</a></li>
+            <li><a class="dropdown-item text-white" href="#">AI Lumivase</a></li>
+            <li><a class="dropdown-item text-white"  href="#">LumiVase</a></li>
+          </ul>
+        </li>
+      
+        <a href="#" class="btn btn-outline-success form-control py-3 mb-3">
+          Contact
+        </a>
+        
+        <a href="#" class="btn btn-outline-success form-control py-3 mb-3">
+          Privacy policy
+        </a>
+      </ul>
+      
+      <!-- Enable hover effect -->
+     
+      
+    </div>
+  </div>
 </html>

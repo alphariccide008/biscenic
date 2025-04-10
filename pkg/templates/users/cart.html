@@ -8,6 +8,11 @@
         <h1 class="section-title px-4" style="padding-top: 30%;">SHOPPING CART</h1>
         <div class="row px-4 pt-5">
             <div class="col-md-8">
+                <div class="row justify-content-center">
+                    <div class="col-md-5 text-center alert bg-success text-white">
+                        {% include "users/_messages.html" %}
+                    </div>
+                </div>
                 <table class="table table-borderless">
                     <tbody>
                         {% for item in items %}

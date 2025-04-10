@@ -26,18 +26,27 @@ class CartItem(db.Model):
     product = db.relationship('Product')
 
 # Update the route to handle cart updates for quantity or other actions
-
 class Transaction(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     amount = db.Column(db.Integer)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
     status = db.Column(db.String(50))
     reference = db.Column(db.String(100))
     product_names = db.Column(db.String(500))  # To store comma-separated product names
+    quantities = db.Column(db.String(500))  # To store comma-separated quantities
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), nullable=False)
     address = db.Column(db.String(300), nullable=False)
     filename = db.Column(db.String(300), nullable=False)
+    shipment_status = db.Column(db.String(300), nullable=True)
 
+    # Relationship to User model (if needed)
+    user = db.relationship('User', backref='transactions', lazy=True)
+ 
     
+
+class Adminreg(db.Model):
+    admin_id=db.Column(db.Integer, autoincrement=True,primary_key=True)
+    admin_username=db.Column(db.String(20),nullable=False)
+    admin_pwd=db.Column(db.String(200),nullable=False)

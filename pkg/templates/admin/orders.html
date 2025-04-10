@@ -1,0 +1,67 @@
+{% extends "admin/dashlayout.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-4">
+    <div class="col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-md-11">
+                <h1 class="text-center py-5">Orders Confirmed</h1>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-5 text-center alert bg-success text-white">
+                        {% include "users/_messages.html" %}
+                    </div>
+                </div>
+
+                {% if transaction %}
+                
+
+                <table class="table table-striped text-center table-bordered bg-white">
+                    <thead>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Image</th>
+                            <th>Reference No.</th>
+                            <th>Product Price</th>
+                            <th>Product Name</th>
+                            <th>Delivery status</th>
+                            <th>Date Ordered</th>
+                            <th>Quantity</th>
+                            <th colspan="2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for txn in transaction %}
+                        <tr>
+                            <td>{{ loop.index }}.</td>
+                            <td>{{ txn.name }}</td>
+                            <td>{{ txn.email }}</td>
+                            <td>{{ txn.address }}</td>
+                            <td class="py-5">
+                                <img src="/static/uploads/{{ txn.filename or 'default-image.jpg' }}" class="img-fluid rounded" style="height: 60px;" alt="{{ txn.name }}">
+                            </td>
+                            <td>{{ txn.reference }}</td>
+                            <td>{{ txn.amount }}</td>
+                            <td>{{ txn.product_names }}</td>
+                            <td>{{ txn.shipment_status }}</td>
+                            <td>{{ txn.timestamp }}</td>
+                            <td>{{ txn.quantities }}</td>
+                            <td><a href="{{ url_for('payment_confirm',di=txn.id)}}" class="btn btn-success">Shipped</a></td>
+                        </tr>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <div class="alert alert-info text-center">
+                    No confirmed transactions found.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

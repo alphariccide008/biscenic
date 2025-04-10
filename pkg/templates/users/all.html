@@ -13,7 +13,7 @@
                       {% for product in products %}
                     <div class="col-md-4 py-5">
                         <a href="{{url_for('viewall',id=product.id)}}">
-                          <img src="/static/images/{{ product.filename}}" class="img-fluid rounded" style="height: 600px; width: 100%;" alt="">
+                          <img src="/static/uploads/{{ product.filename}}" class="img-fluid rounded" style="height: 600px; width: 100%;" alt="">
                         </a>
                         <p class="pt-3">{{ product.name }}</p>
                         <p>${{ product.price }}</p>

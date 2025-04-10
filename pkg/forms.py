@@ -26,10 +26,11 @@ class LoginForm(FlaskForm):
 
 
 class Uploadfile(FlaskForm):
-        image = FileField("upload Project Image",validators=[FileAllowed(['jpg','png','jpeg'])])
-        name = StringField("input name",validators=[DataRequired(message="Please Input A description")])
-        amount= StringField("Project Price",validators=[DataRequired(message="Price")])
-        action = StringField("Type of transaction",validators=[DataRequired(message="Price")])
+        projectdp = FileField("upload Project Image",validators=[FileAllowed(['jpg','png','jpeg'])])
+        projectdescription = TextAreaField("Description",validators=[DataRequired(message="Please Input A description")])
+        projectprice= StringField("Project Price",validators=[DataRequired(message="Price")])
+        projectname= StringField("Project Name",validators=[DataRequired(message="Price")])
+        btnsubmit = SubmitField("Upload Project")
 
 
 class Withdrawal(FlaskForm):

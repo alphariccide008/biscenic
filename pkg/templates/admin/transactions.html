@@ -1,4 +1,4 @@
-{% extends "admin/adminlayout.html" %}
+{% extends "admin/dashlayout.html" %}
 
 {% block content %}
 <div class="row justify-content-center mt-4">
@@ -6,37 +6,45 @@
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <h1 class="text-center py-5">Transaction History</h1>
-                {% include "users/_messages.html" %}
-                {% if deets %}
+                <div class="row justify-content-center">
+                    <div class="col-md-5 text-center alert bg-success text-white">
+                        {% include "users/_messages.html" %}
+                    </div>
+                </div>
+                {% if userdeets %}
                 <table class="table table-striped text-center table-bordered bg-white">
                     <thead>
                         <tr>
                             <th>S/N</th>
                             <th>Full Name</th>
-                            <th>Transaction Plan</th>
-                            <th>Transaction Type</th>
-                            <th>Transaction Amount</th>
-                            <th>Transaction Action</th>
-                            <th>Transaction Status</th>
-                            <th>Transaction Date</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Image</th>
+                            <th>Reference No.</th>
+                            <th>Product Price</th>
+                            <th>Product Name</th>
+                            <th>Product Status</th> 
+                            <th>Product quantity</th>
+                            <th>Date Ordered</th>
                             <th colspan="2">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for user in deets %}
+                        {% for user in userdeets %}
                         
                         <tr>
                             <td>{{ loop.index }}.</td>
-                            <td>{{ user.user.fname }} {{ user.user.lname }}</td>
-                            <td>{{ user.trans.trans_name}}</td>
-                            <td>{{ user.trans.trans_plan}}</td>
-                            <td>+${{ user.trans.trans_amount}}.00</td>  
-                            <td>{{ user.trans.trans_action }}</td>
-                            <td>{{ user.trans.trans_status }}</td>
-                            <td>{{ user.trans.trans_date }}</td>
-
-                            <td><a href="{{ url_for('confirm',id=user.trans.trans_id)}}" class="btn btn-success">Confirm</a></td>
-                        </tr>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.email}}</td>
+                            <td>{{ user.address}}</td>
+                            <td class="py-5"><img src="/static/uploads/{{ user.filename or 'default-image.jpg' }}" class="img-fluid rounded" style="height: 60px;" alt="{{ user.name }}"></td>                            <td>{{ user.reference }}</td>
+                            <td>{{ user.amount }}</td>
+                            <td>{{ user.product_names }}</td>
+                            <td>{{ user.status }}</td>
+                            <td>{{ user.quantities}}</td>
+                            <td>{{ user.timestamp}}</td>
+                    
+                            <td><a href="{{ url_for('payment_confirmed',id=user.id)}}" class="btn btn-success">confirm</a></td>
                         {% endfor %}
                     </tbody>
                 </table>

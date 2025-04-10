@@ -249,9 +249,15 @@ def checkout():
     # Get address from the form
     address = request.form["address"]  # Ensure this field is in your form
 
-    # Get product names to store in the transaction
+    # Get product names and quantities to store in the transaction
     product_names = [item.product.name for item in cart_items]  # List of product names
+    product_quantities = [str(item.quantity) for item in cart_items]  # List of product quantities
+    product_filenames = [item.product.filename for item in cart_items]  # List of product image filenames
+    
+    # Convert lists to comma-separated strings
     product_names_str = ", ".join(product_names)  # Convert list to comma-separated string
+    product_quantities_str = ", ".join(product_quantities)  # Convert list to comma-separated string
+    product_filenames_str = ", ".join(product_filenames) 
 
     # Create a new transaction in the database
     transaction = Transaction(
@@ -261,8 +267,10 @@ def checkout():
         name=request.form["name"],  # Assuming name is sent from the form
         email=request.form["email"],  # Assuming email is sent from the form
         address=request.form["address"],  # Save address to the transaction
-        filename="default-image.jpg",  # You can update this as needed
-        product_names=product_names_str  # Save the product names as a comma-separated string
+        filename=product_filenames_str,  # You can update this as needed
+        product_names=product_names_str,  # Save the product names as a comma-separated string
+        quantities=product_quantities_str,  # Save the product quantities as a comma-separated string
+        shipment_status="pending"  # You can update the shipment status as needed
     )
     db.session.add(transaction)
     db.session.commit()
@@ -304,8 +312,8 @@ def checkout():
 
     except Exception as e:
         flash(f"Error: {str(e)}", "danger")
-        return redirect(url_for('cart'))  # Redirect back to cart if an error occurs
-# Redirect back to cart if an error occurs
+        return redirect(url_for('cart'))  # Redirect back to the cart page on error
+
 
 
 
@@ -317,7 +325,7 @@ def checkout():
 @app.errorhandler(404)
 def error_page(errors):
     
-    flash('Thanks for placing your Order','danger')
+    
     return render_template("users/errorpage.html")
 
 

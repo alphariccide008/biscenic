@@ -1,41 +1,38 @@
-{% extends "admin/adminlayout.html" %}
+{% extends "admin/dashlayout.html" %}
 {% block content %}
-<div class="row justify-content-center my-5">
+<div class="row justify-content-center my-5" style="margin-top: 30%;">
     <div class="col-md-10 bg-white">
-        <h4 class="text-center py-3"><b>All Registered Users</b></h4>
+        <h4 class="text-center py-3 "><b>All Registered Users</b></h4>
         {% if deet %}
         <table class="table table-striped text-center">
-            {% include "users/_messages.html" %}
+            <div class="row justify-content-center">
+                <div class="col-md-5 text-center alert bg-success text-white">
+                    {% include "users/_messages.html" %}
+                </div>
+            </div>
             <thead>
                 <tr>
                     <th>S/N</th>
-                    <th>Full Name</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                    <th>City</th>
-                    <th>SSN</th>
-                    <th>Zipcode</th>
-                    <th>BTC Balance</th>
-                    <th>ETH Balance</th>
-                    <th>Checking Balance</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Product Description</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                 
                     
                 </tr>
             </thead>
             <tbody>
-                {% for user in deet %}
+                {% for product in deet %}
        
                 
                 <tr>
-                    <td>{{ loop.index }}</td>
-                    <td>{{ user.fname }} {{ user.lname }}</td>
-                    <td>{{ user.address }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.city}}</td>
-                    <td>{{ user.ssn}}</td>
-                    <td>{{ user.zipcode}}</td>
-                    <td>{{ user.btc_balance}}</td>
-                    <td>{{ user.eth_balance}}</td>
-                    <td>{{ user.freezed_balance}}</td>
+                    <td class="py-5">{{ loop.index }}</td>
+                    <td class="py-5">{{ product.name }}</td>
+                    <td class="py-5">{{ product.price }}</td>
+                    <td class="py-5 px-3">{{ product.desc }}</td>
+                    <td class="py-5"><img src="/static/uploads/{{ product.filename or 'default-image.jpg' }}" class="img-fluid rounded" style="height: 60px;" alt="{{ product.name }}"></td>
+                    <td><a href="{{ url_for('delete_product',id=product.id)}}" class="btn btn-danger">Delete</a></td>
                     
                 </tr>
                 {% endfor %}

@@ -1,0 +1,35 @@
+{% extends "admin/dashlayout.html" %}
+{% block content %}
+<div class="row" style="height: 1000px;">
+    <div class="col-md-10 px-3">
+        <div class="row justify-content-center" style="margin-top: 100px; padding-bottom: 100px;">
+            <div class="col-md-5 px-2">
+                <form action="" enctype="multipart/form-data" method="POST" class="card px-5" novalidate>
+                    <h4 class="text-center pt-4">Upload Project</h4>
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"> <!-- CSRF token -->
+                        <div class="mb-3 pt-3">
+                            <label for="project_image"></label>
+                            <input type="file" name="project_image" class="form-control" accept="image/*" required>
+                        </div> 
+                        <div class="mb-3 pt-3">
+                            <label for="name"></label>
+                            <input type="text" name="name" placeholder="Projec Name" class="form-control">
+                        </div> 
+                        <div class="mb-3 pt-3">
+                            <label for="projectdescription"></label>
+                            <textarea name="desc" class="form-control" placeholder="Project Description" id="" cols="30" rows="10"></textarea>
+                        </div> 
+                        <div class="mb-3 pt-3">
+                            <label for="projectprice"></label>
+                            <input type="text" name="price" class="form-control" placeholder="Project Price">
+                        </div>
+                        <div>
+                            <button class="form-control bg-danger text-white mb-4' ">Upload Project</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,4 +1,4 @@
-{% extends "users/index.html" %}
+{% extends "admin/adminlayout.html" %}
 
 {% block content %} 
 <div class="row justify-content-center" style="padding-top: 50px;">
@@ -7,23 +7,14 @@
             <div class="col-md-7" style="padding-top: 100px; padding-bottom: 100px;">
                 <div class="contain justify-content-center" id="container">
                     
-                    <div class="form-container sign-in">
+                    <div class=" sign-in">
                         {% include "users/_messages.html" %}
-                        <form method="post" style="padding-top: 50%;">
+                        <form method="post" class="card text-center px-5" >
                             <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
-                            <h1>Sign In</h1>
-                            <input type="email" name="email" placeholder="Email">
-                            <input type="password" name="pwd" placeholder="Password">
-                            <button type="submit">Log In</button>
-                            <div class="toggle-container">
-                                <div class="toggle ">
-                                    <div class="toggle-panel toggle-right">
-                                        <h1>Welcome Back Admin</h1>
-                                        <p>Register Your personal details to use all of site features</p>
-                                        
-                                </div>
-                            </div>
-                           
+                            <h1 class="py-4">Welcome Back Admin</h1>
+                            <input type="email" name="email" class="form-control py-2" placeholder="Email">
+                            <input type="password" name="pwd" class="form-control my-2" placeholder="Password">
+                            <button class="form-control my-4 btn navbar-colored text- text-white" type="submit">Log In</button>                           
                         </form>
                     </div>
                   
