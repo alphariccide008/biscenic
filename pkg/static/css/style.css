@@ -60,28 +60,30 @@
   background-color: rgba(0, 0, 0, 0.409);
 }
 
-.banner1-mobile {
+
+.banner1 {
   background-color: rgb(24, 24, 54);
-  background: linear-gradient(to bottom, rgba(12, 51, 47, 0.7), rgba(16, 49, 35, 0.7)),
-  url('/static/images/footer2.jpg') no-repeat center center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  url('/static/images/lumibanner.jpg') no-repeat center center;
   min-height: 880px;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-/* Adjust min-height for smaller devices */
-@media (max-width: 896px) {
-  .banner1-mobile {
-    max-height: 350px; /* Reduced min-height for smaller devices */
-  }
+
+
+.banner1-mobile {
+  background-color: rgb(24, 24, 54);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  url('/static/images/lumibanner.jpg') no-repeat center center;
+  min-height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-@media (max-width: 480px) {
-  .banner1-mobile {
-    min-height: 300px; /* Further reduced min-height for extra small devices */
-  }
-}
 
 
 
