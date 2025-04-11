@@ -281,43 +281,39 @@
 
 <!-- offcanvas body -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h5 id="offcanvasRightLabel ">BiSCENIC</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <ul class="#">
-        <a href="#" class="btn btn-outline-success form-control  py-3 mb-3">
-          Home
-        </a>
-        
-        <li class="nav-item list-unstyled dropdown">
-          <a href="#" class="btn btn-outline-success form-control py-3 mb-3 dropdown-toggle" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Shop
-          </a>
-          <ul class="dropdown-menu navbar-colored form-control" aria-labelledby="shopDropdown">
-            <li><a class="dropdown-item text-white" href="all.html">All</a></li>
-            <li><a class="dropdown-item text-white" href="#">AI Lumivase</a></li>
-            <li><a class="dropdown-item text-white"  href="#">LumiVase</a></li>
-          </ul>
-        </li>
-      
-        <a href="#" class="btn btn-outline-success form-control py-3 mb-3">
-          Contact
-        </a>
-        
-        <a href="#" class="btn btn-outline-success form-control py-3 mb-3">
-          Privacy policy
-        </a>
-      </ul>
-      
-      <!-- Enable hover effect -->
-      <style>
-        .nav-item.dropdown:hover .dropdown-menu {
-          display: block;
-        }
-      </style>
-      
-    </div>
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel ">BiSCENIC</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
+  <div class="offcanvas-body">
+    <ul class="#">
+      <a href="{{ url_for('home') }}" class="btn btn-outline-success form-control  py-3 mb-3">
+        Home
+      </a>
+      
+      
+        <a href="{{ url_for('all')}}" class="btn btn-outline-success form-control py-3 mb-3 ">
+          Shop
+        </a>
+    
+    
+      <a href="#contact" class="btn btn-outline-success form-control py-3 mb-3">
+        Contact
+      </a>
+      <a class=" btn btn-outline-success form-control py-3 mb-3" href="{{ url_for('cart')}}">Cart
+        <span class="cart-badge">{{ cart_count }}</span>
+   
+      </a>
+      
+    </ul>
+    
+    <!-- Enable hover effect -->
+    <style>
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    </style>
+    
+  </div>
+</div>
 </html>
