@@ -64,7 +64,7 @@
 .banner1 {
   background-color: rgb(24, 24, 54);
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-  url('/static/images/lumi5.jpg') no-repeat center center;
+  url('/static/images/test.jpg') no-repeat center center;
   min-height: 880px;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -173,7 +173,7 @@
 .hero-img {
   background-color: rgb(24, 24, 54);
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)),
-  url('/static/images/newbanner.jpg') no-repeat center center;
+  url('/static/images/lumipink.jpg') no-repeat center center;
   min-height: 1000px;
   background-attachment: fixed;
   background-repeat: no-repeat;
